@@ -1,0 +1,486 @@
+import React from "react";
+
+// Demo images (replace with your own)
+const heroImg = "/images/hero-students.png";
+const featureImgs = [
+  "/images/feature-questions.png",
+  "/images/feature-adaptive.png",
+  "/images/feature-analytics.png",
+  "/images/feature-bilingual.png",
+];
+const testimonialImgs = [
+  "/images/student1.png",
+  "/images/student2.png",
+  "/images/student3.png",
+];
+
+export default function Home() {
+  return (
+    <div style={{ fontFamily: "Segoe UI, Arial, sans-serif", background: "#f3f7fa" }}>
+      {/* HERO SECTION */}
+      <section
+        style={{
+          background: "linear-gradient(100deg,#2a5298 0%,#1e3c72 100%)",
+          color: "#fff",
+          padding: "3.5rem 1rem 2rem 1rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        <div style={{ flex: "1 1 380px", minWidth: 280, maxWidth: 460, zIndex: 2 }}>
+          <h1 style={{ fontSize: "2.6rem", fontWeight: 800, marginBottom: "1rem", color: "#ffd700" }}>
+            QB365 SLMS
+          </h1>
+          <h2 style={{ fontWeight: 500, fontSize: "1.3rem", marginBottom: "1.3rem" }}>
+            India’s Most Colorful Learning Platform for School & Competitive Exams
+          </h2>
+          <ul style={{ fontSize: "1.05rem", margin: "0 0 1.2rem 0", padding: 0, listStyle: "none" }}>
+            <li>🎯 500,000+ Q&A | 📱 Mobile Ready | 🌐 English & தமிழ்</li>
+            <li>🧠 Adaptive Tests | 📊 Live Analytics | 🔒 Secure</li>
+          </ul>
+          <a
+            href="#plans"
+            style={{
+              background: "linear-gradient(90deg,#ffd700,#ff9800)",
+              color: "#1e3c72",
+              padding: "0.9rem 2.2rem",
+              borderRadius: "30px",
+              fontWeight: "bold",
+              fontSize: "1.15rem",
+              textDecoration: "none",
+              boxShadow: "0 4px 10px #0002",
+              display: "inline-block",
+              marginBottom: "1.5rem",
+            }}
+          >
+            🎁 Start Free Trial
+          </a>
+        </div>
+        <div style={{ flex: "1 1 340px", minWidth: 220, textAlign: "center" }}>
+          <img
+            src={heroImg}
+            alt="QB365 SLMS Students"
+            style={{ maxWidth: "100%", width: 390, borderRadius: 18, boxShadow: "0 8px 30px #0003" }}
+          />
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section style={{ padding: "3.5rem 1rem", background: "#f3f7fa" }}>
+        <h2 style={{ textAlign: "center", fontWeight: 700, color: "#1e3c72", fontSize: "2rem" }}>
+          Why Students Love QB365 SLMS?
+        </h2>
+        <div
+          style={{
+            margin: "2.2rem auto 0",
+            maxWidth: 1200,
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: "2.5rem",
+          }}
+        >
+          <FeatureCard
+            img={featureImgs[0]}
+            bg="#ffe270"
+            title="Maximum Q&A Coverage"
+            text="500,000+ expertly curated questions for classes 6–12 and all major competitive exams."
+          />
+          <FeatureCard
+            img={featureImgs[1]}
+            bg="#b9ffb7"
+            title="Adaptive Practice Engine"
+            text="Personalized tests and quizzes that adapt to your strengths and weaknesses."
+          />
+          <FeatureCard
+            img={featureImgs[2]}
+            bg="#aee9fd"
+            title="Live Progress Analytics"
+            text="See your growth instantly. Track scores, time spent, and identify areas to improve."
+          />
+          <FeatureCard
+            img={featureImgs[3]}
+            bg="#ffb1c9"
+            title="Bilingual & Inclusive"
+            text="Full support for English and தமிழ், so every student feels at home."
+          />
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section
+        style={{
+          padding: "3rem 1rem",
+          background: "linear-gradient(100deg,#ffd700 0%,#ff9800 100%)",
+        }}
+      >
+        <h2 style={{ textAlign: "center", color: "#1e3c72", fontWeight: 700, fontSize: "2rem" }}>
+          How Does QB365 SLMS Work?
+        </h2>
+        <div
+          style={{
+            maxWidth: 900,
+            margin: "2.5rem auto 0",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
+            gap: "2rem",
+          }}
+        >
+          <StepBox
+            no="1"
+            title="Sign Up Instantly"
+            text="Register with your mobile number and board. No payment needed for trial."
+            color="#1e3c72"
+          />
+          <StepBox
+            no="2"
+            title="Learn & Practice"
+            text="Explore chapters, attempt adaptive tests, and access detailed Q&A with solutions."
+            color="#ff9800"
+          />
+          <StepBox
+            no="3"
+            title="Track & Succeed"
+            text="See instant analytics, improve weak topics, and get ready for exams with confidence!"
+            color="#2a5298"
+          />
+        </div>
+      </section>
+
+      {/* PRICING PLANS */}
+      <section id="plans" style={{ padding: "3rem 1rem", background: "#f3f7fa" }}>
+        <h2 style={{ textAlign: "center", color: "#1e3c72", fontWeight: 700, fontSize: "2rem" }}>
+          Simple, Transparent Pricing
+        </h2>
+        <p style={{ textAlign: "center", color: "#444", fontSize: "1.1rem", marginBottom: "2rem" }}>
+          Unlock all subjects, practice tests, and exam prep for just <span style={{ color: "#ff9800", fontWeight: 700 }}>₹99/- per subject</span>.<br />
+          CBSE | Tamil Nadu State Board | NEET, JEE, NMMS, NTSE & More
+        </p>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "2rem",
+            maxWidth: 950,
+            margin: "0 auto",
+          }}
+        >
+          <PlanCard
+            title="TN State Board"
+            price="₹99/subject"
+            features={["English & தமிழ் Medium", "All Subjects 6–12", "Book Back, MCQs, Creative Q&A", "Progress Analytics"]}
+            color="#2a5298"
+          />
+          <PlanCard
+            title="CBSE"
+            price="₹99/subject"
+            features={["All Subjects 6–12", "Full Syllabus", "Smart One Mark Tests", "Instant Results"]}
+            color="#ff9800"
+          />
+          <PlanCard
+            title="Competitive / Scholarship"
+            price="₹99/exam"
+            features={["NEET, JEE, NMMS, NTSE, Olympiads", "200,000+ MCQs", "Timed Mock Tests", "Detailed Explanations"]}
+            color="#ffd700"
+          />
+        </div>
+        <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+          <a
+            href="#contact"
+            style={{
+              background: "linear-gradient(90deg,#2a5298,#ffd700)",
+              color: "#fff",
+              padding: "0.9rem 2.5rem",
+              borderRadius: "30px",
+              fontWeight: "bold",
+              fontSize: "1.18rem",
+              textDecoration: "none",
+              boxShadow: "0 4px 10px #0002",
+              display: "inline-block",
+            }}
+          >
+            Get Started Now!
+          </a>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section style={{ padding: "3rem 1rem", background: "#fff" }}>
+        <h2 style={{ textAlign: "center", fontWeight: 700, color: "#1e3c72", fontSize: "2rem" }}>
+          What Our Students Say
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "2.3rem",
+            maxWidth: 950,
+            margin: "2.3rem auto 0",
+            justifyContent: "center",
+          }}
+        >
+          <TestimonialCard
+            img={testimonialImgs[0]}
+            name="Anitha, Class 12"
+            text="This is the best application for revision and understanding exam patterns. It helped me score well in my public exams!"
+            color="#ffd700"
+          />
+          <TestimonialCard
+            img={testimonialImgs[1]}
+            name="Aadithya S, Class 11"
+            text="I improved my test performance by 40% using QB365 practice modules regularly."
+            color="#ff9800"
+          />
+          <TestimonialCard
+            img={testimonialImgs[2]}
+            name="Kavya, Class 12"
+            text="I have gone through the question bank extensively. It's well organized and helped me identify my weak areas easily."
+            color="#2a5298"
+          />
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{ padding: "3rem 1rem", background: "#f3f7fa" }}>
+        <h2 style={{ textAlign: "center", color: "#1e3c72", fontWeight: 700, fontSize: "2rem" }}>
+          Frequently Asked Questions
+        </h2>
+        <div style={{ maxWidth: 800, margin: "2rem auto 0" }}>
+          <FAQ
+            q="Can I try QB365 for free?"
+            a="Yes. You can access the first chapter of every subject for free, no payment needed."
+          />
+          <FAQ
+            q="Is the platform available in Tamil?"
+            a="All TN State Board content is available in both English and தமிழ்."
+          />
+          <FAQ
+            q="Is my progress tracked?"
+            a="Yes! You get real-time analytics, chapter-wise scores & detailed reports."
+          />
+          <FAQ
+            q="Is my data secure?"
+            a="QB365 SLMS is cloud-based, encrypted, and GDPR-compliant."
+          />
+          <FAQ
+            q="Can parents monitor results?"
+            a="Absolutely! Parent dashboards show test performance and learning progress."
+          />
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section
+        id="contact"
+        style={{
+          padding: "3rem 1rem",
+          background: "linear-gradient(100deg,#2a5298 0%,#1e3c72 100%)",
+          color: "#fff",
+        }}
+      >
+        <div style={{ maxWidth: 650, margin: "0 auto", textAlign: "center" }}>
+          <h2>Contact Our Team</h2>
+          <p style={{ fontSize: "1.1rem", marginBottom: "2rem" }}>
+            Have questions, need support, or want to subscribe? We're here to help!
+          </p>
+          <div style={{ margin: "2rem 0", fontSize: "1.07rem" }}>
+            <p>
+              <b>Email:</b> <a href="mailto:sales@qb365.in" style={{ color: "#ffd700" }}>sales@qb365.in</a>
+            </p>
+            <p>
+              <b>Phone:</b> <a href="tel:+918682895000" style={{ color: "#ffd700" }}>+91 86828 95000</a>
+            </p>
+            <p>
+              <b>WhatsApp:</b> <a href="https://wa.me/918428642000" style={{ color: "#ffd700" }}>+91 84286 42000</a>
+            </p>
+          </div>
+          <a
+            href="#plans"
+            style={{
+              background: "linear-gradient(90deg,#ffd700,#ff9800)",
+              color: "#1e3c72",
+              padding: "0.9rem 2.5rem",
+              borderRadius: "30px",
+              fontWeight: "bold",
+              fontSize: "1.17rem",
+              textDecoration: "none",
+              marginTop: "1.2rem",
+              display: "inline-block",
+              boxShadow: "0 4px 10px #0002",
+            }}
+          >
+            Start Your Free Trial
+          </a>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer
+        style={{
+          background: "linear-gradient(90deg,#ffd700,#ff9800)",
+          color: "#1e3c72",
+          textAlign: "center",
+          padding: "1.5rem 1rem",
+          fontWeight: "500",
+        }}
+      >
+        QB365 SLMS — Learn. Practice. Succeed. | &copy; {new Date().getFullYear()} QB365.in
+        <div style={{ marginTop: "0.5rem", fontSize: "0.98em" }}>
+          <a href="#plans" style={{ color: "#1e3c72", textDecoration: "underline", margin: "0 0.7rem" }}>Pricing</a>
+          <a href="#contact" style={{ color: "#1e3c72", textDecoration: "underline", margin: "0 0.7rem" }}>Contact</a>
+          <a href="#faq" style={{ color: "#1e3c72", textDecoration: "underline", margin: "0 0.7rem" }}>FAQ</a>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+// Feature Card
+function FeatureCard({ img, bg, title, text }) {
+  return (
+    <div
+      style={{
+        background: bg,
+        borderRadius: "20px",
+        padding: "2.1rem 1.2rem 1.3rem 1.2rem",
+        textAlign: "center",
+        boxShadow: "0 1px 7px #0002",
+        minHeight: 325,
+      }}
+    >
+      <img src={img} alt={title} style={{ width: 80, marginBottom: 18 }} />
+      <h3 style={{ fontSize: "1.18rem", marginBottom: "0.6rem", color: "#1e3c72" }}>{title}</h3>
+      <p style={{ color: "#2a3a4a" }}>{text}</p>
+    </div>
+  );
+}
+
+// Step Box
+function StepBox({ no, title, text, color }) {
+  return (
+    <div
+      style={{
+        flex: "1",
+        minWidth: 220,
+        background: "#fff",
+        borderRadius: "18px",
+        padding: "1.7rem 1.2rem",
+        textAlign: "center",
+        boxShadow: "0 1px 10px #0002",
+        borderTop: `5px solid ${color}`,
+      }}
+    >
+      <div
+        style={{
+          fontSize: "2.3rem",
+          fontWeight: 700,
+          color: color,
+          marginBottom: "0.7rem",
+        }}
+      >
+        {no}
+      </div>
+      <h4 style={{ fontSize: "1.1rem", marginBottom: "0.4rem" }}>{title}</h4>
+      <p style={{ color: "#444" }}>{text}</p>
+    </div>
+  );
+}
+
+// Plan Card
+function PlanCard({ title, price, features, color }) {
+  return (
+    <div
+      style={{
+        flex: "1",
+        minWidth: 230,
+        background: "#fff",
+        borderRadius: "18px",
+        padding: "2rem 1.2rem",
+        boxShadow: "0 2px 8px #0002",
+        borderTop: `6px solid ${color}`,
+        textAlign: "center",
+      }}
+    >
+      <h3 style={{ color, marginBottom: "0.6rem", fontWeight: 700 }}>{title}</h3>
+      <div style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "1rem", color: color }}>{price}</div>
+      <ul style={{ textAlign: "left", paddingLeft: "1.2rem", marginBottom: "1rem" }}>
+        {features.map((f, i) => (
+          <li key={i} style={{ marginBottom: "0.4rem", color: "#444" }}>
+            ✔ {f}
+          </li>
+        ))}
+      </ul>
+      <a
+        href="#contact"
+        style={{
+          background: color,
+          color: "#fff",
+          padding: "0.7rem 1.4rem",
+          borderRadius: "18px",
+          fontWeight: "bold",
+          fontSize: "1rem",
+          textDecoration: "none",
+          display: "inline-block",
+        }}
+      >
+        Select Plan
+      </a>
+    </div>
+  );
+}
+
+// Testimonial Card
+function TestimonialCard({ img, name, text, color }) {
+  return (
+    <div
+      style={{
+        background: "#f3f7fa",
+        borderRadius: "18px",
+        padding: "1.6rem 1.1rem",
+        minWidth: 260,
+        maxWidth: 320,
+        textAlign: "center",
+        boxShadow: `0 2px 10px ${color}55`,
+        borderTop: `5px solid ${color}`,
+      }}
+    >
+      <img
+        src={img}
+        alt={name}
+        style={{
+          width: 64,
+          height: 64,
+          borderRadius: "50%",
+          objectFit: "cover",
+          marginBottom: "1rem",
+          border: `3px solid ${color}`,
+        }}
+      />
+      <p style={{ fontStyle: "italic", color: "#222", minHeight: 60 }}>{text}</p>
+      <footer style={{ marginTop: "1rem", fontWeight: "bold", color: color }}>{name}</footer>
+    </div>
+  );
+}
+
+// FAQ
+function FAQ({ q, a }) {
+  return (
+    <details
+      style={{
+        marginBottom: "1.2rem",
+        background: "#fff",
+        borderRadius: "10px",
+        padding: "1.1rem 1.3rem",
+        boxShadow: "0 1px 6px #0001",
+      }}
+    >
+      <summary style={{ cursor: "pointer", fontWeight: "bold", color: "#2a5298", fontSize: "1.09rem" }}>
+        {q}
+      </summary>
+      <div style={{ marginTop: "0.7rem", color: "#2a3a4a" }}>{a}</div>
+    </details>
+  );
+}
